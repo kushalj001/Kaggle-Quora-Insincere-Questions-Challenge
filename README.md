@@ -8,8 +8,9 @@ This can be loosely related to transfer learning in NLP. Pre-trained word vector
 The embedding layer is initialized by creating an embedding matrix. 3 convolutional layers with varying window sizes [3,4,5] are used to extract features followed by max pooling. The outputs of 3 max pooling layers are concatenated into a single tensor and then flattened for classification. A dropout with probability of 0.5 and ReLU activation is used as done in the paper.
 The accuracy of the model is a misleading metric since the dataset is unbalanced. f1 score must be used to evaluate the model.
 ## Pre-processing ##
-Pre-processing is carried out in such a way so as to increase the intersection between the dataset's vocabulary and the embeddings. Stop words are not removed while cleaning hoping they might help the neural net to capture any feature. The pre-processing ideas are largely drawn from other kaggle kernels(https://www.kaggle.com/christofhenkel).
-
+Pre-processing is carried out in such a way so as to increase the intersection between the dataset's vocabulary and the embeddings. Stop words are not removed while cleaning since the stop words(high frequency words) were already downsampled while training the word vectors and hence removal of stop words would make very small difference. The pre-processing ideas are largely drawn from other kaggle kernels(https://www.kaggle.com/christofhenkel).
+## Data ##
+* https://www.kaggle.com/c/quora-insincere-questions-classification/data
 ## RESOURCES
 * https://arxiv.org/abs/1408.5882
 * https://www.kaggle.com/christofhenkel
